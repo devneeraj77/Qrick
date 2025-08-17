@@ -12,7 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export function QRickGenerator() {
-  const [inputValue, setInputValue] = useState<string>("https://firebase.google.com/");
+  const [inputValue, setInputValue] = useState<string>("https://qrick-bice.vercel.app/");
   const [debouncedValue, setDebouncedValue] = useState<string>(inputValue);
   const [aiHook, setAiHook] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
