@@ -86,11 +86,12 @@ export function QRickGenerator() {
       
       const img = new Image();
       img.onload = () => {
+        const padding = 50;
         canvas.width = 512;
         canvas.height = 512;
         ctx.fillStyle = "#ffffff";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, padding, padding, canvas.width - padding * 2, canvas.height - padding * 2);
         const pngUrl = canvas.toDataURL("image/png");
         triggerDownload(pngUrl, "qrick_qrcode.png");
       };
