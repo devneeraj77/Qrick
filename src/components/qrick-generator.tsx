@@ -86,9 +86,10 @@ export function QRickGenerator() {
       
       const img = new Image();
       img.onload = () => {
-        canvas.width = img.width * 2;
-        canvas.height = img.height * 2;
-        ctx.imageSmoothingEnabled = false;
+        canvas.width = 512;
+        canvas.height = 512;
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         const pngUrl = canvas.toDataURL("image/png");
         triggerDownload(pngUrl, "qrick_qrcode.png");
